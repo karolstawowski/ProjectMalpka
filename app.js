@@ -1,8 +1,11 @@
+//Połączenie z botem
 const Discord = require('discord.js');
 const client = new Discord.Client();
-//Połączenie z botem
+
+//Praca z plikiem zewnętrznym
 const fs = require('fs');
 
+//Odczytywanie hasła dostępu do bota
 fs.readFile('password.txt', function (err, data) {
     if (err) {
       throw err; 
@@ -12,10 +15,10 @@ fs.readFile('password.txt', function (err, data) {
     client.on('ready', () => {
         console.log(`Logged in as ${client.user.tag}!`);
     });
+
     //Funkcje bota
     client.on('message', msg => {
-        if (msg.author.bot) return
-        if(msg.content.toLowerCase() === '!malpka' | msg.content.toLowerCase() === '!małpka')
+        if (msg.content.toLowerCase() === '!malpka' | msg.content.toLowerCase() === '!małpka')
         {
             const opis = '!małpka - pomoc\n'+
             '!hepiskul - hepiskul.png\n'+
@@ -23,13 +26,12 @@ fs.readFile('password.txt', function (err, data) {
             '!ogromnyskul - ogromnyskul.jpg\n'+
             '!kreciolek - kreciolek.gif\n'+
             'skul. - loop of skuls\n'
+
             const embed = new Discord.MessageEmbed()
             .setTitle('Pomoc dla Serwerowego Skulwysyna')
-            // Set the color of the embed
             .setColor(0x0900AB)
-            // Set the main content of the embed
             .setDescription(opis);
-            // Send the embed to the same channel as the message
+
             msg.channel.send(embed);
         }
         if (msg.content.toLowerCase() === '!hepiskul') 
@@ -69,9 +71,8 @@ fs.readFile('password.txt', function (err, data) {
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
-            
+
             const losowa = getRandomIntInclusive(0,20000);
-            const data = require('./api.steampowered.com.json');
 
             fs.readFile('./api.steampowered.com.json', 'utf8', function (err, data) {
                 if (err) throw err;
@@ -84,6 +85,35 @@ fs.readFile('password.txt', function (err, data) {
                 
                 msg.channel.send(embed);
             });
+        }
+        if (msg.content.toLowerCase() === 'karol top sql') 
+        {
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            const losowa = getRandomIntInclusive(0,113038);
+
+            var mysql = require('mysql');
+            var con = mysql.createConnection({
+                host: "localhost",
+                user: "root",
+                database: "grysteam"
+            });
+
+            con.connect(function(err) {
+                if (err) throw err;
+                con.query('SELECT Nazwa FROM gry WHERE `ID` = ' + losowa + ';', (err, results, fields) => {
+                    if (err) throw err;
+                        const embed = new Discord.MessageEmbed()
+                        .setTitle('Gra, w którą Karol nie zagra: ')
+                        .setColor(0x0900AB)
+                        .setDescription(results[0].Nazwa);
+                        msg.channel.send(embed);
+                });
+            });
+            
         }
     });
     client.login(token);
