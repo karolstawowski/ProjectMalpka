@@ -1,8 +1,7 @@
 # ProjectMalpka
 ![Language](https://img.shields.io/badge/language-JavaScript-0E15C0)
 ![Number of lines](https://img.shields.io/tokei/lines/github/karolstawowski/ProjectMalpka)
-![Version](https://img.shields.io/badge/version-1.0.0.0-0E15C0) 
-![RepoSize](https://img.shields.io/github/repo-size/karolstawowski/ProjectMalpka) <br>
+![Version](https://img.shields.io/badge/version-1.0.0.0-0E15C0) <br>
 
 ## Description
 Project Malpka is a Discord Bot made using Node.js enviroment.
