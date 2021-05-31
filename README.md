@@ -1,5 +1,5 @@
 # ProjectMalpka
-![Language](https://img.shields.io/badge/language-Node.js-0E15C0)
+![Language](https://img.shields.io/badge/language-JavaScript-0E15C0)
 ![Number of lines](https://img.shields.io/tokei/lines/github/karolstawowski/ProjectMalpka)
 ![Version](https://img.shields.io/badge/version-1.0.0.0-0E15C0) <br>
 
@@ -9,6 +9,6 @@ The most important function of the bot is selecting a random game from Steam, wh
 Solution uses MySQL database made by me instead of a simple JSON file (official Steam API) to reduce the load imposed on the bot.
 
 ### Technologies
+JavaScript, Node.js, <a href="https://discord.js.org/#/">discord.js</a>, Oracle MySQL, Steam API
 
-
-I don't like playing computer games. It's immature.
+<i>I don't like playing computer games. It's immature.</i>
