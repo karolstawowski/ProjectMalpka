@@ -1,22 +1,21 @@
-//Połączenie z botem
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-//Praca z plikiem zewnętrznym
+// External file
 const fs = require('fs');
 
-//Odczytywanie hasła dostępu do bota
+// Read bot password from password.txt file
 fs.readFile('password.txt', function (err, data) {
     if (err) {
       throw err; 
     }
     const token = data.toString();
-
+    // Display prompt when connection is established
     client.on('ready', () => {
         console.log(`Logged in as ${client.user.tag}!`);
     });
 
-    //Funkcje bota
+    // Bot functionality
     client.on('message', msg => {
         if (msg.content.toLowerCase() === '!malpka' | msg.content.toLowerCase() === '!małpka')
         {
