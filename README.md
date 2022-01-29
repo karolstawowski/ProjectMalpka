@@ -7,9 +7,31 @@
 ## Description
 Project Malpka is a Discord Bot made using Node.js enviroment.
 The most important function of the bot is selecting a random game from Steam, which I won't play.
-Solution uses MySQL database made by me instead of a simple JSON file (official Steam API) to reduce the load imposed on the bot.
+Solution uses MySQL database instead of a simple JSON file (official Steam API) to reduce the load imposed on the bot.
 
-### Technologies
-JavaScript, Node.js, <a href="https://discord.js.org/#/">discord.js</a>, Oracle MySQL, Steam API
+## Installation
+
+To run ProjectMalpka locally, you are to have both <a href="https://nodejs.org/en/download/">Node.js enviroment</a> and <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm package manager</a> installed. 
+
+```bash
+git clone https://github.com/karolstawowski/ProjectMalpka.git
+```
+
+```bash
+Open Xampp, run Apache and MySQL servers
+Navigate to Xampp directory, insert ./assets/api.steampowered.com.csv file to ./mysql/data/malpkajs/
+Run script.sql
+```
+
+```bash
+npm install
+```
+
+```bash
+node app.js
+```
+
+### Technologies and Tools
+Node.js, <a href="https://discord.js.org/#/">discord.js</a>, MySQL, Steam API, Xampp
 
 <i>I don't like playing computer games. It's immature.</i>
