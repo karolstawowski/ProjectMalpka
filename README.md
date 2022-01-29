@@ -17,11 +17,12 @@ To run ProjectMalpka locally, you are to have both <a href="https://nodejs.org/e
 git clone https://github.com/karolstawowski/ProjectMalpka.git
 ```
 
-```bash
-Open Xampp, run Apache and MySQL servers
-Navigate to Xampp directory, insert ./assets/api.steampowered.com.csv file to ./mysql/data/malpkajs/
+<i>
+Open Xampp, run Apache and MySQL servers<br>
+Navigate to Xampp directory, insert ./assets/api.steampowered.com.csv file to ./mysql/data/malpkajs/<br>
 Run script.sql
-```
+Create file password.txt in root directory of project with Discord Bot's token inside
+</i>
 
 ```bash
 npm install
